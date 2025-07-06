@@ -1,5 +1,5 @@
 {
-  "app-id": "de.helden-software",
+  "app-id": "de.helden.software",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "23.08",
   "sdk": "org.freedesktop.Sdk",
@@ -37,15 +37,15 @@
       "build-commands": [
         "install -Dm755 run-helden.sh /app/bin/run-helden.sh",
         "install -Dm644 helden.jar /app/helden.jar",
-        "install -Dm644 de.helden-software.desktop /app/share/applications/de.helden-software.desktop",
-        "install -Dm644 de.helden-software.png /app/share/icons/hicolor/128x128/apps/de.helden-software.png",
+        "install -Dm644 de.helden.software.desktop /app/share/applications/de.helden.software.desktop",
+        "install -Dm644 de.helden.software.png /app/share/icons/hicolor/128x128/apps/de.helden.software.png",
         "install -Dm644 heldconfiguration.xml /app/share/heldconfiguration.xml"
       ],
       "sources": [
         { "type": "file", "path": "helden.jar" },
         { "type": "file", "path": "run-helden.sh" },
-        { "type": "file", "path": "de.helden-software.desktop" },
-        { "type": "file", "path": "de.helden-software.png" },
+        { "type": "file", "path": "de.helden.software.desktop" },
+        { "type": "file", "path": "de.helden.software.png" },
         { "type": "file", "path": "heldconfiguration.xml" }
       ]
     }

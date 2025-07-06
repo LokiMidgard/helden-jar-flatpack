@@ -86,27 +86,27 @@ if [ $? -eq 0 ]; then
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 
-        echo "Uninstalling any existing installation of de.helden-software..."
-        flatpak --user uninstall -y de.helden-software 2>/dev/null || true
+        echo "Uninstalling any existing installation of de.helden.software..."
+        flatpak --user uninstall -y de.helden.software 2>/dev/null || true
 
         echo "Installing the application locally..."
         flatpak --user remote-add --no-gpg-verify --if-not-exists helden-repo repo
-        flatpak --user install helden-repo de.helden-software -y 2>/dev/null || echo "✓ Application already installed"
+        flatpak --user install helden-repo de.helden.software -y 2>/dev/null || echo "✓ Application already installed"
 
         echo ""
         echo "✓ Installation completed!"
         echo ""
         echo "To run the application:"
-        echo "  flatpak run de.helden-software"
+        echo "  flatpak run de.helden.software"
         echo ""
         echo "To uninstall:"
-        echo "  flatpak --user uninstall de.helden-software"
+        echo "  flatpak --user uninstall de.helden.software"
     else
         echo "Installation skipped."
         echo ""
         echo "To install later, run:"
         echo "  flatpak --user remote-add --no-gpg-verify --if-not-exists helden-repo repo"
-        echo "  flatpak --user install helden-repo de.helden-software -y"
+        echo "  flatpak --user install helden-repo de.helden.software -y"
         echo ""
         echo "To run from build directory (for testing):"
         echo "  flatpak-builder --run build-dir flatpak.json run-helden.sh"

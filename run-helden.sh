@@ -3,15 +3,15 @@
 
 # Set up XDG directories if not already set
 if [ -z "$XDG_DATA_HOME" ]; then
-    export XDG_DATA_HOME="$HOME/.var/app/de.helden-software/data"
+    export XDG_DATA_HOME="$HOME/.var/app/de.helden.software/data"
 fi
 
 if [ -z "$XDG_CONFIG_HOME" ]; then
-    export XDG_CONFIG_HOME="$HOME/.var/app/de.helden-software/config"
+    export XDG_CONFIG_HOME="$HOME/.var/app/de.helden.software/config"
 fi
 
 if [ -z "$XDG_CACHE_HOME" ]; then
-    export XDG_CACHE_HOME="$HOME/.var/app/de.helden-software/cache"
+    export XDG_CACHE_HOME="$HOME/.var/app/de.helden.software/cache"
 fi
 
 # Create directories if they don't exist
