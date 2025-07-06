@@ -1,0 +1,35 @@
+{
+  "app-id": "com.example.helden",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "23.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "run-helden.sh",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.openjdk17"
+  ],
+  "finish-args": [
+    "--share=ipc",
+    "--share=network",
+    "--socket=x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--socket=cups",
+    "--talk-name=org.freedesktop.portal.Print",
+    "--system-talk-name=org.cups.cupsd",
+    "--system-talk-name=org.freedesktop.Avahi"
+  ],
+  "modules": [
+    {
+      "name": "helden-jar",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 run-helden.sh /app/bin/run-helden.sh",
+        "install -Dm644 helden.jar /app/helden.jar"
+      ],
+      "sources": [
+        { "type": "file", "path": "helden.jar" },
+        { "type": "file", "path": "run-helden.sh" }
+      ]
+    }
+  ]
+}
