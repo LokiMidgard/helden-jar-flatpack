@@ -4,6 +4,12 @@
 
 set -e # Exit on any error
 
+# Check for -y parameter
+AUTO_INSTALL=false
+if [[ "$1" == "-y" ]]; then
+    AUTO_INSTALL=true
+fi
+
 echo "=== Helden Flatpak Build Script ==="
 
 # Check if flatpak is installed
@@ -81,8 +87,15 @@ if [ $? -eq 0 ]; then
     flatpak-builder --repo=repo --force-clean build-dir flatpak.json
 
     echo ""
-    read -p "Do you want to install the application locally? (y/N): " -n 1 -r
-    echo
+    
+    # Check if auto-install is enabled
+    if [[ "$AUTO_INSTALL" == "true" ]]; then
+        REPLY="y"
+        echo "Auto-installing application (use without -y to be asked)..."
+    else
+        read -p "Do you want to install the application locally? (y/N): " -n 1 -r
+        echo
+    fi
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
 
