@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<einstellungen>
+    <Global>
+        <lastversion name="5.5.3"/>
+        <pfad customPfad="$XDG_DATA_HOME/plugins" name="pluginPfad"/>
+        <pfad customPfad="$XDG_DATA_HOME/mods" name="mods"/>
+        <pfad customPfad="$XDG_DATA_HOME/hintergruende" name="hintergruende"/>
+        <pfad customPfad="$XDG_CONFIG_HOME" name="einstellungsPfad"/>
+        <pfad customPfad="$XDG_DATA_HOME/helden.zip.hld" name="heldenPfad"/>
+        <pfad customPfad="$XDG_DATA_HOME/heldenbilder" name="heldBildPfad"/>
+        <pfad customPfad="$XDG_DATA_HOME/hilfetexte" name="hilfeTextePfad"/>
+        <pfad customPfad="$XDG_DATA_HOME/erschaffungssaves" name="erschaffungsSavesPfad"/>
+        <pfad customPfad="$XDG_CACHE_HOME/logs" name="logs"/>
+        <pfad customPfad="$XDG_DATA_HOME/daten" name="daten"/>
+        <hslocal name="false"/>
+        <startEvents>
+            <event key="dayly" value="1751833247"/>
+            <event key="alle20starts" value="2"/>
+            <event key="einmaligmessage" value="1"/>
+            <event key="einmalig" value="1"/>
+            <event key="mounth" value="1751833247"/>
+            <event key="weekly" value="1751833247"/>
+        </startEvents>
+        <profiMode name="false"/>
+        <hilfeanzeigen name="true"/>
+        <gpStart name="110"/>
+        <metaTalentAusgeben name="true"/>
+        <goettergeschenk name="true"/>
+        <heldNamenSignatur name="true"/>
+        <geldkreisedrucken name="false"/>
+        <tierfeld name="false"/>
+        <zauberKommentar name="false"/>
+        <neueBoegen name="true"/>
+        <alteBoegen name="true"/>
+        <frameMaximiert name="false"/>
+        <autoUpdate name="false"/>
+        <debianMode name="true"/>
+        <autoSaveNachErschaffung name="true"/>
+        <lookandfeel name="helden.gui.laf.DSAMetalLookAndFeel"/>
+        <zauberQuelle name="true"/>
+        <ignoriereRangeChecks name="false"/>
+        <font fontgroesse="0" name="Serif.plain"/>
+        <guifont name="Serif.plain"/>
+        <letzterPfad name="$XDG_DATA_HOME"/>
+        <anzahlTalentAktivierung name="5"/>
+        <proxyServer name=""/>
+        <proxyPort name=""/>
+        <proxyVerwenden name="false"/>
+        <proxyAuth name="false"/>
+        <proxyUser name=""/>
+        <proxyPwd name=""/>
+        <neueHeldenInTree name="true"/>
+        <sortierung name="time"/>
+        <ListeOderTree name="0"/>
+        <preRelease name="false"/>
+        <selectedPath/>
+        <seitenwahl aspleiste="true" blockfarbe="-1" buch="false" geldkreise="false" hintergrundpfad="#" id="1751825759790" meta="false" metaWDE="false" signieren="false" stufe40="false" tierfeld="false" wundmaennchenpfad="" zauberkommentar="false" zonenreustung="true" zrsteiler="20"/>
+        <seitenwahl aspleiste="true" blockfarbe="-1" buch="false" geldkreise="false" hintergrundpfad="#" id="1751833284461" meta="false" metaWDE="false" signieren="false" stufe40="false" tierfeld="false" wundmaennchenpfad="" zauberkommentar="false" zonenreustung="true" zrsteiler="20"/>
+        <seitenwahl aspleiste="true" blockfarbe="-1" buch="false" geldkreise="false" hintergrundpfad="#" id="1262570898188" meta="false" metaWDE="false" signieren="false" stufe40="false" tierfeld="false" wundmaennchenpfad="" zauberkommentar="false" zonenreustung="true" zrsteiler="20"/>
+        <seitenwahl aspleiste="true" blockfarbe="-1" buch="false" geldkreise="false" hintergrundpfad="#" id="1751833284462" meta="false" metaWDE="false" signieren="false" stufe40="false" tierfeld="false" wundmaennchenpfad="" zauberkommentar="false" zonenreustung="true" zrsteiler="20"/>
+        <slbogen/>
+    </Global>
+</einstellungen>

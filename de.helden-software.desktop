@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Helden-Software
+Comment=Helden-Software character generator and manager
+Icon=de.helden-software
+Exec=flatpak run de.helden-software
+Categories=Game;RolePlaying;
+Keywords=RPG;character;generator;pen and paper;roleplaying;
+StartupNotify=true
+MimeType=application/x-helden-character;

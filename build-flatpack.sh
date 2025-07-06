@@ -2,12 +2,12 @@
 
 # Script to download helden.jar and build the Flatpak
 
-set -e  # Exit on any error
+set -e # Exit on any error
 
 echo "=== Helden Flatpak Build Script ==="
 
 # Check if flatpak is installed
-if ! command -v flatpak &> /dev/null; then
+if ! command -v flatpak &>/dev/null; then
     echo "Error: flatpak is not installed. Please install flatpak first."
     exit 1
 fi
@@ -50,7 +50,11 @@ echo "✓ All required Flatpak components are installed"
 
 # Download the latest helden.jar
 echo "Downloading helden.jar from helden-software.de..."
-wget -O helden.jar "https://www.helden-software.de/down/hs5/050503/helden.jar"
+if [ ! -f "helden.jar" ]; then
+    wget -O helden.jar "https://www.helden-software.de/down/hs5/050503/helden.jar"
+else
+    echo "✓ helden.jar already exists, skipping download"
+fi
 
 if [ ! -f "helden.jar" ]; then
     echo "Error: Failed to download helden.jar"
@@ -73,11 +77,40 @@ flatpak-builder --force-clean build-dir flatpak.json
 if [ $? -eq 0 ]; then
     echo "✓ Flatpak build completed successfully!"
     echo ""
-    echo "To run the application:"
-    echo "  flatpak-builder --run build-dir flatpak.json run-helden.sh"
+    echo "Creating repository for installation..."
+    flatpak-builder --repo=repo --force-clean build-dir flatpak.json
+
     echo ""
-    echo "To export for distribution:"
-    echo "  flatpak-builder --repo=repo --force-clean build-dir flatpak.json"
+    read -p "Do you want to install the application locally? (y/N): " -n 1 -r
+    echo
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+        echo "Uninstalling any existing installation of de.helden-software..."
+        flatpak --user uninstall -y de.helden-software 2>/dev/null || true
+
+        echo "Installing the application locally..."
+        flatpak --user remote-add --no-gpg-verify --if-not-exists helden-repo repo
+        flatpak --user install helden-repo de.helden-software -y 2>/dev/null || echo "✓ Application already installed"
+
+        echo ""
+        echo "✓ Installation completed!"
+        echo ""
+        echo "To run the application:"
+        echo "  flatpak run de.helden-software"
+        echo ""
+        echo "To uninstall:"
+        echo "  flatpak --user uninstall de.helden-software"
+    else
+        echo "Installation skipped."
+        echo ""
+        echo "To install later, run:"
+        echo "  flatpak --user remote-add --no-gpg-verify --if-not-exists helden-repo repo"
+        echo "  flatpak --user install helden-repo de.helden-software -y"
+        echo ""
+        echo "To run from build directory (for testing):"
+        echo "  flatpak-builder --run build-dir flatpak.json run-helden.sh"
+    fi
 else
     echo "✗ Flatpak build failed!"
     exit 1
