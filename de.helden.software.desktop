@@ -1,11 +1,11 @@
 [Desktop Entry]
-Version=1.0
+Version=5.5.3
 Type=Application
 Name=Helden-Software
-Comment=Helden-Software character generator and manager
+Comment=Charactergenerator und Manager für DSA4.1
 Icon=de.helden.software
-Exec=flatpak run de.helden.software
 Categories=Game;RolePlaying;
-Keywords=RPG;character;generator;pen and paper;roleplaying;
+Keywords=DSA;TDE;RPG;character;generator;pen and paper;roleplaying;
 StartupNotify=true
+Terminal=false
 MimeType=application/x-helden-character;
